@@ -94,6 +94,7 @@
         , tag: ""
         , invalid: false
         , validating: false
+        , focused: false
       };
     }
 
@@ -233,7 +234,14 @@
         this.addTag(tag);
       }
 
+      this.setState({ focused: false });
+
       this.props.onBlur();
+    }
+
+    , oFocus: function (e) {
+      this.setState({ focused: true });
+      this.props.onFocus();
     }
 
     , focus: function () {
@@ -254,7 +262,7 @@
 
       return (
         React.createElement("div", {
-          className: ns + "tagsinput"
+          className: ns + "tagsinput" + (this.state.focused ? ns + '-tagsinput-focused' : '')
         }, tagNodes, React.createElement(Input, {
           ref: "input"
           , ns: ns
@@ -264,6 +272,7 @@
           , validating: this.state.validating
           , onKeyDown: this.onKeyDown
           , onChange: this.onChange
+          , onFocus: this.onFocus
           , onBlur: this.onBlur
         }))
       );
