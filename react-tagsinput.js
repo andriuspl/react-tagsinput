@@ -249,6 +249,7 @@
     }
 
     , focus: function () {
+      this.setState({ focused: true });
       this.refs.input.getDOMNode().focus();
     }
 
