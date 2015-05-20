@@ -30,6 +30,8 @@
         React.__spread({}, this.props, {
           type: "text"
         , className: inputClass
+        , onFocus : this.props.onFocus
+        , onBlur : this.props.onBlur
         , placeholder: this.props.placeholder
         })
       );
@@ -62,6 +64,7 @@
       , onChange: React.PropTypes.func
       , onChangeInput: React.PropTypes.func
       , onBlur: React.PropTypes.func
+      , onFocus: React.PropTypes.func
       , onTagAdd: React.PropTypes.func
       , onTagRemove: React.PropTypes.func
       , transform: React.PropTypes.func
@@ -80,6 +83,7 @@
         , onChange: function () { }
         , onChangeInput: function () { }
         , onBlur: function () { }
+        , onFocus: function () { }
         , onTagAdd: function () { }
         , onTagRemove: function () { }
         , transform: function (tag) { return tag.trim(); }
