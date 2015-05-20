@@ -250,6 +250,7 @@
 
     , focus: function () {
       this.setState({ focused: true });
+      console.log("ASDADASDASDASDASD");
       this.refs.input.getDOMNode().focus();
     }
 
@@ -267,7 +268,7 @@
 
       return (
         React.createElement("div", {
-          className: ns + "tagsinput" + (this.state.focused ? ns + '-tagsinput-focused' : '')
+          className: ns + "tagsinput " + (this.state.focused ? ns + '-tagsinput-focused' : '')
         }, tagNodes, React.createElement(Input, {
           ref: "input"
           , ns: ns
