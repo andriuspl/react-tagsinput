@@ -250,7 +250,6 @@
 
     , focus: function () {
       this.setState({ focused: true });
-      console.log("ASDADASDASDASDASD");
       this.refs.input.getDOMNode().focus();
     }
 
